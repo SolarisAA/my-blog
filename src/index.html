@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的博客</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>我的博客</h1>
+    <p>欢迎来到我的博客！</p>
+  </header>
+  <main>
+    <ul id="post-list">
+      <!-- 博客文章列表将在这里动态加载 -->
+    </ul>
+  </main>
+
+  <script>
+    const posts = [
+      {
+        title: "第一篇文章",
+        slug: "first-post"
+      },
+      // 你可以在这里手动添加更多文章
+    ];
+
+    const postListElement = document.getElementById("post-list");
+    posts.forEach(post => {
+      const postElement = document.createElement("li");
+      postElement.innerHTML = `<a href="post.html?slug=${post.slug}">${post.title}</a>`;
+      postListElement.appendChild(postElement);
+    });
+  </script>
+</body>
+</html>
