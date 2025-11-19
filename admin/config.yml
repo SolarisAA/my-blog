@@ -1,0 +1,14 @@
+backend:
+  name: github
+  repo: your-github-username/your-repo-name  # 替换为你的 GitHub 仓库信息
+  branch: main
+
+collections:
+  - name: "blog"
+    label: "博客文章"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "内容", name: "body", widget: "markdown" }
