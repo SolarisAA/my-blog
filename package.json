@@ -1,0 +1,10 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx http-server ."
+  },
+  "devDependencies": {
+    "http-server": "^13.0.0"
+  }
+}
