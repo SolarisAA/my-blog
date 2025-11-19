@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章详情</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>文章标题</h1>
+    <a href="index.html">返回首页</a>
+  </header>
+  <main>
+    <div id="post-content">
+      <!-- 文章内容将在这里加载 -->
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+
+    // 模拟加载文章内容（实际可以通过动态渲染）
+    const postContent = {
+      "first-post": {
+        title: "第一篇文章",
+        content: "<p>这是一篇测试文章。</p>"
+      },
+      // 可以继续增加更多文章
+    };
+
+    const post = postContent[slug];
+    if (post) {
+      document.querySelector("h1").textContent = post.title;
+      document.getElementById("post-content").innerHTML = post.content;
+    } else {
+      document.getElementById("post-content").innerHTML = "<p>文章未找到。</p>";
+    }
+  </script>
+</body>
+</html>
